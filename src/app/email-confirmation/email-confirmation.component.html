@@ -1,1 +1,41 @@
-<p>email-confirmation works!</p>
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+  <div class="bg-white p-6 rounded-lg shadow-md w-96">
+    <form class="flex flex-col text-center">
+      <h2 class="text-2xl font-bold mb-2">Confirm Email</h2>
+      <p class="mb-8 text-gray-600 text-sm">
+        Check Your Email and Enter Confirmation Code
+      </p>
+
+      <label for="code" class="text-left text-sm md:mt-8"
+        >Confirmation Code</label
+      >
+      <input
+        type="text"
+        id="code"
+        name="code"
+        placeholder="Enter Code"
+        required
+        class="p-2 mb-2 border border-gray-300 rounded-md placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+      />
+
+      <button
+        type="submit"
+        class="p-2 mb-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+      >
+        Confirm Email
+      </button>
+
+      <hr class="my-4 border-t border-gray-300" />
+
+      <p class="text-sm mb-8">Haven`t received your code?</p>
+
+      <button
+        type="button"
+        (click)="goToResendCode()"
+        class="p-2 mb-2 bg-white text-blue-500 rounded-md border border-gray-300"
+      >
+        Resend Code
+      </button>
+    </form>
+  </div>
+</div>

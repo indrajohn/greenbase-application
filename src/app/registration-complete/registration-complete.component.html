@@ -1,1 +1,27 @@
-<p>registration-complete works!</p>
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+  <div class="bg-white p-6 rounded-lg shadow-md w-96">
+    <form class="flex flex-col text-center">
+      <img
+        src="assets/images/email.png"
+        alt="Modernize Logo"
+        class="h-24 w-24 mx-auto mb-8"
+      />
+      <h2 class="text-2xl font-bold mb-2">Almost There!</h2>
+      <p class="mb-8 text-gray-600 text-sm">
+        Check your email inbox and confirm your account
+      </p>
+
+      <hr class="my-4 border-t border-gray-300" />
+
+      <p class="text-sm mb-8">Haven`t received any email?</p>
+
+      <button
+        type="button"
+        (click)="goToResendConfirmation()"
+        class="p-2 mb-2 bg-white text-blue-500 rounded-md border border-gray-300"
+      >
+        Resend Confirmation
+      </button>
+    </form>
+  </div>
+</div>
