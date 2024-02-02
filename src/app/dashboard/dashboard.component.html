@@ -1,5 +1,45 @@
-<div class="h-screen">
+<div class="flex flex-col min-h-screen">
   <app-header></app-header>
-  <app-navigation-sidebar></app-navigation-sidebar>
-  <router-outlet></router-outlet>
+  <div class="flex flex-1">
+    <app-navigation-sidebar></app-navigation-sidebar>
+
+    <main class="flex-grow overflow-auto gap-4 bg-gray-100">
+      <div *ngIf="menu === ''">
+        <app-dashboard-layout />
+      </div>
+      <div *ngIf="menu === 'orders'">
+        <app-orders />
+      </div>
+      <div *ngIf="menu === 'products'">
+        <app-products />
+      </div>
+      <div *ngIf="menu === 'categories'">
+        <app-categories />
+      </div>
+      <div *ngIf="menu === 'customers'">
+        <app-customers />
+      </div>
+      <div *ngIf="menu === 'reports'">
+        <app-reports />
+      </div>
+      <div *ngIf="menu === 'coupons'">
+        <app-coupons />
+      </div>
+      <div *ngIf="menu === 'inbox'">
+        <app-inbox />
+      </div>
+      <div *ngIf="menu === 'knowledge-base'">
+        <app-knowledge-base />
+      </div>
+      <div *ngIf="menu === 'product-updates'">
+        <app-product-updates />
+      </div>
+      <div *ngIf="menu === 'personal-settings'">
+        <app-personal-settings />
+      </div>
+      <div *ngIf="menu === 'global-settings'">
+        <app-global-settings />
+      </div>
+    </main>
+  </div>
 </div>

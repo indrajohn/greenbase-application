@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,4 +8,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.css',
 })
-export class SignInComponent {}
+export class SignInComponent {
+  constructor(private router: Router) {}
+  goToDashboard(): void {
+    this.router.navigate(['/dashboard']);
+  }
+}
