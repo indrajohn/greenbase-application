@@ -46,7 +46,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
       this.menu = params.get('menu') || '';
-      console.log(this.menu);
     });
   }
 }

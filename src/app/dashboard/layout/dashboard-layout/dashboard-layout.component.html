@@ -178,26 +178,65 @@
     </div>
   </div>
   <!-- chart -->
-  <div
-    class="bg-white rounded-xl shadow p-4 flex items-center justify-between mt-8"
-  >
-    <div>
-      <h3>Orders Over Time</h3>
+  <div class="flex flex-row gap-4">
+    <div class="bg-white rounded-xl shadow p-4 mt-8">
       <div>
-        <span>645 Orders on May 22</span>
-        <span>472 Orders on May 21</span>
+        <h3>Orders Over Time</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="p-4 flex items-center justify-between">
+            <div>
+              <div class="text-xl font-bold">645</div>
+              <div class="text-sm text-gray-500">Orders on May 22</div>
+            </div>
+          </div>
+          <div class="p-4 flex items-center justify-between">
+            <div>
+              <div class="text-xl font-bold">472</div>
+              <div class="text-sm text-gray-500">Orders on May 21</div>
+            </div>
+          </div>
+        </div>
+        <div class="block">
+          <canvas
+            baseChart
+            height="400"
+            width="720"
+            [type]="'line'"
+            [data]="lineChartData"
+            [options]="lineChartOptions"
+            [legend]="lineChartLegend"
+          >
+          </canvas>
+        </div>
       </div>
-      <!-- <canvas
-        baseChart
-        [datasets]="lineChartData"
-        [labels]="lineChartLabels"
-        [options]="lineChartOptions"
-        [colors]="lineChartColors"
-        [legend]="lineChartLegend"
-        [chartType]="lineChartType"
-        [plugins]="lineChartPlugins"
-      >
-      </canvas> -->
+    </div>
+    <div class="bg-white rounded-xl shadow p-4 mt-8">
+      <div>
+        <h3>Last 7 Days Sales</h3>
+        <div class="mb-4">
+          <div class="text-xl font-bold">1,259</div>
+          <div class="text-sm text-gray-500">Items Sold</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold">$12,546</div>
+          <div class="text-sm text-gray-500">Revenue</div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="p-4 flex items-center justify-between"></div>
+          <div class="p-4 flex items-center justify-between"></div>
+        </div>
+        <div class="block">
+          <canvas
+            baseChart
+            height="350"
+            width="350"
+            [type]="'bar'"
+            [data]="barChartData123"
+            [options]="barChartOptions"
+          >
+          </canvas>
+        </div>
+      </div>
     </div>
   </div>
 </div>
