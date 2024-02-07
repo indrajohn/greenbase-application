@@ -1,4 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import {
   ChartConfiguration,
   ChartData,
@@ -6,16 +7,42 @@ import {
   ChartType,
 } from 'chart.js';
 import { NgChartsModule } from 'ng2-charts';
-
+interface Transaction {
+  name: string;
+  date: string;
+  amount: number;
+  status: 'Paid' | 'Pending';
+}
+interface Product {
+  name: string;
+  price: number;
+  unit: number;
+}
 @Component({
   selector: 'app-dashboard-layout',
   standalone: true,
-  imports: [NgChartsModule],
+  imports: [NgChartsModule, CommonModule],
   templateUrl: './dashboard-layout.component.html',
   styleUrl: './dashboard-layout.component.css',
 })
 export class DashboardLayoutComponent {
   title = 'ng2-charts-demo';
+  isBrowser = true;
+  transactions: Transaction[] = [
+    { name: 'Jessica S.', date: '24.05.2020', amount: 124.97, status: 'Paid' },
+    { name: 'Andrew S.', date: '23.05.2020', amount: 55.42, status: 'Pending' },
+    { name: 'Kevin S.', date: '23.05.2020', amount: 89.9, status: 'Paid' },
+    { name: 'Jack S.', date: '22.05.2020', amount: 144.94, status: 'Pending' },
+    { name: 'Arthur S.', date: '22.05.2020', amount: 70.52, status: 'Paid' },
+  ];
+
+  unit_sold: Product[] = [
+    { name: 'Men Gray Hoodie', price: 124.97, unit: 204 },
+    { name: 'Woman Striped T-Shirt', price: 55.42, unit: 155 },
+    { name: 'Woman White T-Shirt', price: 89.9, unit: 120 },
+    { name: 'Man White T-Shirt', price: 144.94, unit: 204 },
+    { name: 'Woman Red T-Shirt', price: 70.52, unit: 155 },
+  ];
   public lineChartData: ChartConfiguration<'line'>['data'] = {
     labels: [
       '4am',
@@ -81,7 +108,9 @@ export class DashboardLayoutComponent {
     ],
   };
 
-  constructor() {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
 
   ngOnInit() {}
 }

@@ -196,7 +196,7 @@
             </div>
           </div>
         </div>
-        <div class="block">
+        <div class="block" *ngIf="isBrowser">
           <canvas
             baseChart
             height="400"
@@ -225,7 +225,7 @@
           <div class="p-4 flex items-center justify-between"></div>
           <div class="p-4 flex items-center justify-between"></div>
         </div>
-        <div class="block">
+        <div class="block" *ngIf="isBrowser">
           <canvas
             baseChart
             height="350"
@@ -237,6 +237,111 @@
           </canvas>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="flex flex-row gap-4">
+    <div class="shadow-md rounded-lg bg-white mt-4">
+      <h3 class="m-4 p-4 font-bold">Recent Transaction</h3>
+      <table class="m-4">
+        <thead class="bg-white">
+          <tr>
+            <th
+              scope="col"
+              class="text-sm font-medium text-gray-400 border-b-2 border-gray-300 px-6 py-4 text-left"
+            >
+              Name
+            </th>
+            <th
+              scope="col"
+              class="text-sm font-medium text-gray-400 border-b-2 border-gray-300 px-6 py-4 text-left"
+            >
+              Date
+            </th>
+            <th
+              scope="col"
+              class="text-sm font-medium text-gray-400 border-b-2 border-gray-300 px-6 py-4 text-left"
+            >
+              Amount
+            </th>
+            <th
+              scope="col"
+              class="text-sm font-medium text-gray-400 border-b-2 border-gray-300 px-6 py-4 text-left"
+            >
+              Status
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b" *ngFor="let transaction of transactions">
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+            >
+              {{ transaction.name }}
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              {{ transaction.date }}
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              ${{ transaction.amount.toFixed(2) }}
+            </td>
+            <td class="whitespace-nowrap text-sm text-left">
+              <span
+                [ngClass]="{
+                  'px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800':
+                    transaction.status === 'Paid',
+
+                  'px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800':
+                    transaction.status === 'Pending'
+                }"
+              >
+                {{ transaction.status }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="shadow-md rounded-lg bg-white mt-4">
+      <h3 class="m-4 p-4 font-bold">Top Products by Units Sold</h3>
+      <table class="m-4">
+        <thead class="bg-white">
+          <tr>
+            <th
+              scope="col"
+              class="text-sm font-medium text-gray-400 border-b-2 border-gray-300 px-6 py-4 text-left"
+            >
+              Name
+            </th>
+            <th
+              scope="col"
+              class="text-sm font-medium text-gray-400 border-b-2 border-gray-300 px-6 py-4 text-left"
+            >
+              Price
+            </th>
+            <th
+              scope="col"
+              class="text-sm font-medium text-gray-400 border-b-2 border-gray-300 px-6 py-4 text-left"
+            >
+              Unit Sold
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b" *ngFor="let unit of unit_sold">
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+            >
+              {{ unit.name }}
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              ${{ unit.price.toFixed(2) }}
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              {{ unit.unit }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
