@@ -1,1 +1,287 @@
-<p>products works!</p>
+<div class="bg-gray-100 p-10 min-h-screen">
+  <div class="p-6">
+    <div class="flex justify-between items-center border-b pb-4">
+      <h1 class="text-2xl font-bold">Add Product</h1>
+      <div>
+        <button class="bg-gray-200 text-black rounded px-4 py-2 mr-2">
+          Cancel
+        </button>
+        <button class="bg-blue-500 text-white rounded px-4 py-2">Save</button>
+      </div>
+    </div>
+
+    <div class="flex mt-4 -mx-2">
+      <div class="w-2/3 p-4 bg-white shadow-lg rounded-lg">
+        <div class="mb-4 p-4">
+          <h2 class="text-lg font-semibold mb-2">Information</h2>
+          <div class="mb-4">
+            <label class="block text-sm mb-2" for="productName"
+              >Product Name</label
+            >
+            <input
+              type="text"
+              id="productName"
+              class="w-full p-2 border rounded"
+              placeholder="Summer T-Shirt"
+            />
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm mb-2" for="productDescription"
+              >Product Description</label
+            >
+            <textarea
+              id="productDescription"
+              class="w-full p-2 border rounded"
+              placeholder="Product description"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <h2 class="text-lg font-semibold mb-2">Images</h2>
+          <div class="border-dashed border-2 rounded p-4 text-center">
+            <button class="border-2 text-blue-500 rounded px-4 py-2">
+              Add File
+            </button>
+            <p class="text-sm text-gray-600 mt-2">Or drag and drop files</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <div class="mb-6">
+            <h2 class="text-xl font-semibold mb-4">Price</h2>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-2" for="productPrice"
+                  >Product Price</label
+                >
+                <input
+                  type="text"
+                  id="productPrice"
+                  class="form-input mt-1 block w-full border border-gray-200 p-2"
+                  placeholder="Enter price"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-sm font-medium mb-2"
+                  for="discountPrice"
+                  >Discount Price</label
+                >
+                <input
+                  type="text"
+                  id="discountPrice"
+                  class="form-input mt-1 block w-full border border-gray-200 p-2"
+                  placeholder="Price at Discount"
+                />
+              </div>
+            </div>
+            <div class="flex items-center mt-4">
+              <input id="tax" type="checkbox" class="form-checkbox" />
+              <label
+                for="tax"
+                class="ml-2 block text-sm font-medium text-gray-700"
+                >Add tax for this product</label
+              >
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <div class="mb-6">
+              <h2 class="text-xl font-semibold mb-4">Different Options</h2>
+              <label
+                for="toggleOptions"
+                class="inline-flex relative items-center cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  id="toggleOptions"
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-11 h-6 bg-gray-200 rounded-full peer-focus:outline-none peer-checked:bg-blue-500 dark:peer-focus:ring-blue-500 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"
+                ></div>
+                <span
+                  class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >
+                  This product has multiple options
+                </span>
+              </label>
+            </div>
+
+            <div class="mb-4">
+              <h3 class="text-lg font-medium mb-2">Option 1</h3>
+              <div class="grid grid-cols-2 gap-4 items-center">
+                <div>
+                  <label
+                    for="optionSize"
+                    class="ml-2 block text-sm font-medium text-gray-700"
+                    >Size</label
+                  >
+                  <select
+                    class="form-select mt-1 block w-full border border-gray-200 p-2"
+                    id="optionSize"
+                  >
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                  </select>
+                </div>
+
+                <div class="flex flex-wrap">
+                  <span
+                    class="m-1 bg-blue-200 rounded-full px-4 py-1 text-sm font-semibold text-blue-800"
+                    >S</span
+                  >
+                  <span
+                    class="m-1 bg-blue-200 rounded-full px-4 py-1 text-sm font-semibold text-blue-800"
+                    >M</span
+                  >
+                  <span
+                    class="m-1 bg-blue-200 rounded-full px-4 py-1 text-sm font-semibold text-blue-800"
+                    >L</span
+                  >
+                  <span
+                    class="m-1 bg-blue-200 rounded-full px-4 py-1 text-sm font-semibold text-blue-800"
+                    >XL</span
+                  >
+                </div>
+              </div>
+              <button class="text-blue-500 text-sm mt-4">Add More</button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h2 class="text-xl font-semibold mb-4">Shipping</h2>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-2" for="weight"
+                  >Weight</label
+                >
+                <input
+                  type="text"
+                  id="weight"
+                  class="form-input mt-1 block w-full border border-gray-200 p-2"
+                  placeholder="Enter Weight"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2" for="country"
+                  >Country</label
+                >
+                <select
+                  id="country"
+                  class="form-select mt-1 block w-full border border-gray-200 p-2"
+                >
+                  <option>Select Country</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="flex items-center mt-4">
+              <label
+                for="toggleOptionsDigitalItems"
+                class="inline-flex relative items-center cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  id="toggleOptionsDigitalItems"
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-11 h-6 bg-gray-200 rounded-full peer-focus:outline-none peer-checked:bg-blue-500 dark:peer-focus:ring-blue-500 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"
+                ></div>
+                <span
+                  class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >
+                  This is digital item
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-1/3 px-2">
+        <div class="mb-4 bg-white shadow-lg rounded-lg p-6">
+          <h2 class="text-lg font-semibold mb-2">Categories</h2>
+          <div class="flex flex-col">
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" />
+              <span class="ml-2">Woman</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" />
+              <span class="ml-2">Man</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" />
+              <span class="ml-2">T-Shirt</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" />
+              <span class="ml-2">Hoodie</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" />
+              <span class="ml-2">Dress</span>
+            </label>
+          </div>
+          <button class="text-blue-500 text-sm mt-2">Create New</button>
+        </div>
+
+        <div class="max-w-sm mx-auto mb-4">
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-lg font-semibold mb-2">Tags</h2>
+            <div class="flex flex-wrap items-center mb-2">
+              <span class="bg-gray-200 rounded-full px-4 py-1 text-sm mr-2 mb-2"
+                >T-Shirt</span
+              >
+              <span class="bg-gray-200 rounded-full px-4 py-1 text-sm mr-2 mb-2"
+                >Man Clothes</span
+              >
+              <span class="bg-gray-200 rounded-full px-4 py-1 text-sm mr-2 mb-2"
+                >Summer Collection</span
+              >
+            </div>
+            <input
+              type="text"
+              class="w-full p-2 border rounded"
+              placeholder="Enter tag name"
+            />
+          </div>
+        </div>
+        <div class="max-w-sm mx-auto">
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <h3 class="text-lg font-semibold mb-4">SEO Settings</h3>
+            <div class="mb-4">
+              <label
+                for="seoTitle"
+                class="block text-sm font-medium text-gray-700"
+                >Title</label
+              >
+              <input
+                type="text"
+                id="seoTitle"
+                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm border p-2"
+                placeholder=""
+              />
+            </div>
+            <div class="mb-4">
+              <label
+                for="seoDescription"
+                class="block text-sm font-medium text-gray-700"
+                >Description</label
+              >
+              <textarea
+                id="seoDescription"
+                rows="3"
+                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2 border"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
